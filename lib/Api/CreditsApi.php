@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace BulkSMS\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use BulkSMS\ApiException;
+use BulkSMS\Configuration;
+use BulkSMS\HeaderSelector;
+use BulkSMS\ObjectSerializer;
 
 /**
  * CreditsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -127,10 +127,10 @@ class CreditsApi
      *
      * Transfer credits to another account
      *
-     * @param  \OpenAPI\Client\Model\TransferEntry $body Contains details of the transfer request. (required)
+     * @param  \BulkSMS\Model\TransferEntry $body Contains details of the transfer request. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['creditTransferPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -144,10 +144,10 @@ class CreditsApi
      *
      * Transfer credits to another account
      *
-     * @param  \OpenAPI\Client\Model\TransferEntry $body Contains details of the transfer request. (required)
+     * @param  \BulkSMS\Model\TransferEntry $body Contains details of the transfer request. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['creditTransferPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -204,7 +204,7 @@ class CreditsApi
      *
      * Transfer credits to another account
      *
-     * @param  \OpenAPI\Client\Model\TransferEntry $body Contains details of the transfer request. (required)
+     * @param  \BulkSMS\Model\TransferEntry $body Contains details of the transfer request. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['creditTransferPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -225,7 +225,7 @@ class CreditsApi
      *
      * Transfer credits to another account
      *
-     * @param  \OpenAPI\Client\Model\TransferEntry $body Contains details of the transfer request. (required)
+     * @param  \BulkSMS\Model\TransferEntry $body Contains details of the transfer request. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['creditTransferPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -262,7 +262,7 @@ class CreditsApi
     /**
      * Create request for operation 'creditTransferPost'
      *
-     * @param  \OpenAPI\Client\Model\TransferEntry $body Contains details of the transfer request. (required)
+     * @param  \BulkSMS\Model\TransferEntry $body Contains details of the transfer request. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['creditTransferPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

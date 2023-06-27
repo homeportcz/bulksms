@@ -1,4 +1,4 @@
-# OpenAPI\Client\WebhooksApi
+# BulkSMS\WebhooksApi
 
 All URIs are relative to https://api.bulksms.com/v1, except if the operation defines another base path.
 
@@ -14,7 +14,7 @@ All URIs are relative to https://api.bulksms.com/v1, except if the operation def
 ## `webhooksGet()`
 
 ```php
-webhooksGet(): \OpenAPI\Client\Model\Webhook[]
+webhooksGet(): \BulkSMS\Model\Webhook[]
 ```
 
 List webhooks
@@ -29,12 +29,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new BulkSMS\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Webhook[]**](../Model/Webhook.md)
+[**\BulkSMS\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -86,12 +86,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new BulkSMS\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -132,7 +132,7 @@ void (empty response body)
 ## `webhooksIdGet()`
 
 ```php
-webhooksIdGet($id): \OpenAPI\Client\Model\Webhook
+webhooksIdGet($id): \BulkSMS\Model\Webhook
 ```
 
 Read a webhook
@@ -145,12 +145,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new BulkSMS\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -174,7 +174,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Webhook**](../Model/Webhook.md)
+[**\BulkSMS\Model\Webhook**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ try {
 ## `webhooksIdPost()`
 
 ```php
-webhooksIdPost($id, $body): \OpenAPI\Client\Model\Webhook
+webhooksIdPost($id, $body): \BulkSMS\Model\Webhook
 ```
 
 Update a webhook
@@ -205,19 +205,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new BulkSMS\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | The `id` of the webhook
-$body = new \OpenAPI\Client\Model\WebhookEntry(); // \OpenAPI\Client\Model\WebhookEntry | Contains the new property values for the webhook
+$body = new \BulkSMS\Model\WebhookEntry(); // \BulkSMS\Model\WebhookEntry | Contains the new property values for the webhook
 
 try {
     $result = $apiInstance->webhooksIdPost($id, $body);
@@ -232,11 +232,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The &#x60;id&#x60; of the webhook | |
-| **body** | [**\OpenAPI\Client\Model\WebhookEntry**](../Model/WebhookEntry.md)| Contains the new property values for the webhook | |
+| **body** | [**\BulkSMS\Model\WebhookEntry**](../Model/WebhookEntry.md)| Contains the new property values for the webhook | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Webhook**](../Model/Webhook.md)
+[**\BulkSMS\Model\Webhook**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ try {
 ## `webhooksPost()`
 
 ```php
-webhooksPost($body): \OpenAPI\Client\Model\Webhook
+webhooksPost($body): \BulkSMS\Model\Webhook
 ```
 
 Create a webhook
@@ -269,18 +269,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\WebhooksApi(
+$apiInstance = new BulkSMS\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \OpenAPI\Client\Model\WebhookEntry(); // \OpenAPI\Client\Model\WebhookEntry | Contains the property values for your new webhook
+$body = new \BulkSMS\Model\WebhookEntry(); // \BulkSMS\Model\WebhookEntry | Contains the property values for your new webhook
 
 try {
     $result = $apiInstance->webhooksPost($body);
@@ -294,11 +294,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\WebhookEntry**](../Model/WebhookEntry.md)| Contains the property values for your new webhook | |
+| **body** | [**\BulkSMS\Model\WebhookEntry**](../Model/WebhookEntry.md)| Contains the property values for your new webhook | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Webhook**](../Model/Webhook.md)
+[**\BulkSMS\Model\Webhook**](../Model/Webhook.md)
 
 ### Authorization
 

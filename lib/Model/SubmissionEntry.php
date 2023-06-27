@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace BulkSMS\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \BulkSMS\ObjectSerializer;
 
 /**
  * SubmissionEntry Class Doc Comment
  *
  * @category Class
  * @description An object that you use when posting messages.
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class SubmissionEntry implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'from' => '\OpenAPI\Client\Model\SubmissionEntryFrom',
-        'to' => '\OpenAPI\Client\Model\SubmissionEntryToInner[]',
+        'from' => '\BulkSMS\Model\SubmissionEntryFrom',
+        'to' => '\BulkSMS\Model\SubmissionEntryToInner[]',
         'routing_group' => 'string',
         'encoding' => 'string',
         'long_message_max_parts' => 'int',
@@ -514,7 +514,7 @@ class SubmissionEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets from
      *
-     * @return \OpenAPI\Client\Model\SubmissionEntryFrom|null
+     * @return \BulkSMS\Model\SubmissionEntryFrom|null
      */
     public function getFrom()
     {
@@ -524,7 +524,7 @@ class SubmissionEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets from
      *
-     * @param \OpenAPI\Client\Model\SubmissionEntryFrom|null $from from
+     * @param \BulkSMS\Model\SubmissionEntryFrom|null $from from
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class SubmissionEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets to
      *
-     * @return \OpenAPI\Client\Model\SubmissionEntryToInner[]
+     * @return \BulkSMS\Model\SubmissionEntryToInner[]
      */
     public function getTo()
     {
@@ -551,7 +551,7 @@ class SubmissionEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets to
      *
-     * @param \OpenAPI\Client\Model\SubmissionEntryToInner[] $to Identifies the recipients  Instead of an array of structured objects, you can also provide a single object, a simple string or an array of strings. If you supply a string, the `type` is taken as INTERNATIONAL.
+     * @param \BulkSMS\Model\SubmissionEntryToInner[] $to Identifies the recipients  Instead of an array of structured objects, you can also provide a single object, a simple string or an array of strings. If you supply a string, the `type` is taken as INTERNATIONAL.
      *
      * @return self
      */

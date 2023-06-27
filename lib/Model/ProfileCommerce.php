@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace BulkSMS\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \BulkSMS\ObjectSerializer;
 
 /**
  * ProfileCommerce Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ProfileCommerce implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'bank_payment_reference' => 'string',
-        'address' => '\OpenAPI\Client\Model\ProfileCommerceAddress'
+        'address' => '\BulkSMS\Model\ProfileCommerceAddress'
     ];
 
     /**
@@ -326,7 +326,7 @@ class ProfileCommerce implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \OpenAPI\Client\Model\ProfileCommerceAddress|null
+     * @return \BulkSMS\Model\ProfileCommerceAddress|null
      */
     public function getAddress()
     {
@@ -336,7 +336,7 @@ class ProfileCommerce implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \OpenAPI\Client\Model\ProfileCommerceAddress|null $address address
+     * @param \BulkSMS\Model\ProfileCommerceAddress|null $address address
      *
      * @return self
      */

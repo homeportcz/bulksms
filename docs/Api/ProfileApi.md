@@ -1,4 +1,4 @@
-# OpenAPI\Client\ProfileApi
+# BulkSMS\ProfileApi
 
 All URIs are relative to https://api.bulksms.com/v1, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to https://api.bulksms.com/v1, except if the operation def
 ## `profileGet()`
 
 ```php
-profileGet(): \OpenAPI\Client\Model\Profile
+profileGet(): \BulkSMS\Model\Profile
 ```
 
 Get profile
@@ -25,12 +25,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProfileApi(
+$apiInstance = new BulkSMS\Api\ProfileApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Profile**](../Model/Profile.md)
+[**\BulkSMS\Model\Profile**](../Model/Profile.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# OpenAPI\Client\MessageApi
+# BulkSMS\MessageApi
 
 All URIs are relative to https://api.bulksms.com/v1, except if the operation defines another base path.
 
@@ -14,7 +14,7 @@ All URIs are relative to https://api.bulksms.com/v1, except if the operation def
 ## `messagesGet()`
 
 ```php
-messagesGet($limit, $filter, $sort_order): \OpenAPI\Client\Model\Message[]
+messagesGet($limit, $filter, $sort_order): \BulkSMS\Model\Message[]
 ```
 
 Retrieve Messages
@@ -29,12 +29,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\MessageApi(
+$apiInstance = new BulkSMS\Api\MessageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -62,7 +62,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Message[]**](../Model/Message.md)
+[**\BulkSMS\Model\Message[]**](../Model/Message.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ try {
 ## `messagesIdGet()`
 
 ```php
-messagesIdGet($id): \OpenAPI\Client\Model\Message
+messagesIdGet($id): \BulkSMS\Model\Message
 ```
 
 Show Message
@@ -95,12 +95,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\MessageApi(
+$apiInstance = new BulkSMS\Api\MessageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -124,7 +124,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Message**](../Model/Message.md)
+[**\BulkSMS\Model\Message**](../Model/Message.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ try {
 ## `messagesIdRelatedReceivedMessagesGet()`
 
 ```php
-messagesIdRelatedReceivedMessagesGet($id): \OpenAPI\Client\Model\Message[]
+messagesIdRelatedReceivedMessagesGet($id): \BulkSMS\Model\Message[]
 ```
 
 List Related Messages
@@ -157,12 +157,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\MessageApi(
+$apiInstance = new BulkSMS\Api\MessageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -186,7 +186,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Message[]**](../Model/Message.md)
+[**\BulkSMS\Model\Message[]**](../Model/Message.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ try {
 ## `messagesPost()`
 
 ```php
-messagesPost($body, $deduplication_id, $auto_unicode, $schedule_date, $schedule_description): \OpenAPI\Client\Model\Message[]
+messagesPost($body, $deduplication_id, $auto_unicode, $schedule_date, $schedule_description): \BulkSMS\Model\Message[]
 ```
 
 Send Messages
@@ -219,18 +219,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\MessageApi(
+$apiInstance = new BulkSMS\Api\MessageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = array(new \OpenAPI\Client\Model\SubmissionEntry()); // \OpenAPI\Client\Model\SubmissionEntry[] | Contains details of the message (or messages) that you want to send.  One `SubmissionEntry` can produce many messages, and your request may contain multiple such entries.
+$body = array(new \BulkSMS\Model\SubmissionEntry()); // \BulkSMS\Model\SubmissionEntry[] | Contains details of the message (or messages) that you want to send.  One `SubmissionEntry` can produce many messages, and your request may contain multiple such entries.
 $deduplication_id = 56; // int | Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the `deduplication-id` of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours.
 $auto_unicode = false; // bool | Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is `true` then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when `auto-unicode` is `true` and the value of the `encoding` property is specified as `UNICODE`, the message will always be sent as `UNICODE`.  If the value is `false` and the `encoding` property is `TEXT` then non-GSM 03.38 characters will be replaced by the `?` character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to `UNICODE`.  A common mistake is to use the backtick character (\\`) which is unicode and will turn your `TEXT` message into a `UNICODE` message.
 $schedule_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Allows you to send a message in the future.  An example value is `2019-02-18T13:00:00+02:00`.  It encodes to `2019-02-18T13%3A00%3A00%2B02%3A00`. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient's location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent.
@@ -248,7 +248,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\SubmissionEntry[]**](../Model/SubmissionEntry.md)| Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. | |
+| **body** | [**\BulkSMS\Model\SubmissionEntry[]**](../Model/SubmissionEntry.md)| Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. | |
 | **deduplication_id** | **int**| Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the &#x60;deduplication-id&#x60; of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours. | [optional] |
 | **auto_unicode** | **bool**| Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is &#x60;true&#x60; then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when &#x60;auto-unicode&#x60; is &#x60;true&#x60; and the value of the &#x60;encoding&#x60; property is specified as &#x60;UNICODE&#x60;, the message will always be sent as &#x60;UNICODE&#x60;.  If the value is &#x60;false&#x60; and the &#x60;encoding&#x60; property is &#x60;TEXT&#x60; then non-GSM 03.38 characters will be replaced by the &#x60;?&#x60; character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to &#x60;UNICODE&#x60;.  A common mistake is to use the backtick character (\\&#x60;) which is unicode and will turn your &#x60;TEXT&#x60; message into a &#x60;UNICODE&#x60; message. | [optional] [default to false] |
 | **schedule_date** | **\DateTime**| Allows you to send a message in the future.  An example value is &#x60;2019-02-18T13:00:00+02:00&#x60;.  It encodes to &#x60;2019-02-18T13%3A00%3A00%2B02%3A00&#x60;. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient&#39;s location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent. | [optional] |
@@ -256,7 +256,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Message[]**](../Model/Message.md)
+[**\BulkSMS\Model\Message[]**](../Model/Message.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ try {
 ## `messagesSendGet()`
 
 ```php
-messagesSendGet($to, $body, $deduplication_id): \OpenAPI\Client\Model\Message[]
+messagesSendGet($to, $body, $deduplication_id): \BulkSMS\Model\Message[]
 ```
 
 Send message by simple GET or POST
@@ -289,12 +289,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\MessageApi(
+$apiInstance = new BulkSMS\Api\MessageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -322,7 +322,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Message[]**](../Model/Message.md)
+[**\BulkSMS\Model\Message[]**](../Model/Message.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace BulkSMS\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \BulkSMS\ObjectSerializer;
 
 /**
  * Message Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -67,8 +67,8 @@ class Message implements ModelInterface, ArrayAccess, \JsonSerializable
         'message_class' => 'int',
         'number_of_parts' => 'int',
         'credit_cost' => 'float',
-        'submission' => '\OpenAPI\Client\Model\MessageSubmission',
-        'status' => '\OpenAPI\Client\Model\MessageStatus',
+        'submission' => '\BulkSMS\Model\MessageSubmission',
+        'status' => '\BulkSMS\Model\MessageStatus',
         'related_sent_message_id' => 'string',
         'user_supplied_id' => 'string'
     ];
@@ -738,7 +738,7 @@ class Message implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets submission
      *
-     * @return \OpenAPI\Client\Model\MessageSubmission|null
+     * @return \BulkSMS\Model\MessageSubmission|null
      */
     public function getSubmission()
     {
@@ -748,7 +748,7 @@ class Message implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets submission
      *
-     * @param \OpenAPI\Client\Model\MessageSubmission|null $submission submission
+     * @param \BulkSMS\Model\MessageSubmission|null $submission submission
      *
      * @return self
      */
@@ -765,7 +765,7 @@ class Message implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return \OpenAPI\Client\Model\MessageStatus
+     * @return \BulkSMS\Model\MessageStatus
      */
     public function getStatus()
     {
@@ -775,7 +775,7 @@ class Message implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \OpenAPI\Client\Model\MessageStatus $status status
+     * @param \BulkSMS\Model\MessageStatus $status status
      *
      * @return self
      */

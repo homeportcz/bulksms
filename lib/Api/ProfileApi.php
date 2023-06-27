@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace BulkSMS\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use BulkSMS\ApiException;
+use BulkSMS\Configuration;
+use BulkSMS\HeaderSelector;
+use BulkSMS\ObjectSerializer;
 
 /**
  * ProfileApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -129,9 +129,9 @@ class ProfileApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Profile
+     * @return \BulkSMS\Model\Profile
      */
     public function profileGet(string $contentType = self::contentTypes['profileGet'][0])
     {
@@ -146,9 +146,9 @@ class ProfileApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Profile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Profile, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileGetWithHttpInfo(string $contentType = self::contentTypes['profileGet'][0])
     {
@@ -191,23 +191,23 @@ class ProfileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Profile' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Profile' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Profile' !== 'string') {
+                        if ('\BulkSMS\Model\Profile' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Profile', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Profile', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Profile';
+            $returnType = '\BulkSMS\Model\Profile';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -228,7 +228,7 @@ class ProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Profile',
+                        '\BulkSMS\Model\Profile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -270,7 +270,7 @@ class ProfileApi
      */
     public function profileGetAsyncWithHttpInfo(string $contentType = self::contentTypes['profileGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Profile';
+        $returnType = '\BulkSMS\Model\Profile';
         $request = $this->profileGetRequest($contentType);
 
         return $this->client

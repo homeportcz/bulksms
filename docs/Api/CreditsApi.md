@@ -1,4 +1,4 @@
-# OpenAPI\Client\CreditsApi
+# BulkSMS\CreditsApi
 
 All URIs are relative to https://api.bulksms.com/v1, except if the operation defines another base path.
 
@@ -25,18 +25,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\CreditsApi(
+$apiInstance = new BulkSMS\Api\CreditsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \OpenAPI\Client\Model\TransferEntry(); // \OpenAPI\Client\Model\TransferEntry | Contains details of the transfer request.
+$body = new \BulkSMS\Model\TransferEntry(); // \BulkSMS\Model\TransferEntry | Contains details of the transfer request.
 
 try {
     $apiInstance->creditTransferPost($body);
@@ -49,7 +49,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\OpenAPI\Client\Model\TransferEntry**](../Model/TransferEntry.md)| Contains details of the transfer request. | |
+| **body** | [**\BulkSMS\Model\TransferEntry**](../Model/TransferEntry.md)| Contains details of the transfer request. | |
 
 ### Return type
 

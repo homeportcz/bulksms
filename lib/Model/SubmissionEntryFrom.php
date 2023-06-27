@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace BulkSMS\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \BulkSMS\ObjectSerializer;
 
 /**
  * SubmissionEntryFrom Class Doc Comment
  *
  * @category Class
  * @description Identifies the sender.  Instead of a structured object, you can supply a string value here.  If you do this, the &#x60;type&#x60; of the sender is derived to be either INTERNATIONAL or ALPHANUMERIC.  If the value does not begin with a &#x60;+&#x60; and it contains at least one character that is not a digit, the type is detected as ALPHANUMERIC. Otherwise, the type is detected as INTERNATIONAL.
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

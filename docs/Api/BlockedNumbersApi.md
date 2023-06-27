@@ -1,4 +1,4 @@
-# OpenAPI\Client\BlockedNumbersApi
+# BulkSMS\BlockedNumbersApi
 
 All URIs are relative to https://api.bulksms.com/v1, except if the operation defines another base path.
 
@@ -11,7 +11,7 @@ All URIs are relative to https://api.bulksms.com/v1, except if the operation def
 ## `blockedNumbersGet()`
 
 ```php
-blockedNumbersGet($min_id, $limit): \OpenAPI\Client\Model\BlockedNumber
+blockedNumbersGet($min_id, $limit): \BulkSMS\Model\BlockedNumber
 ```
 
 List blocked numbers
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new BulkSMS\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,7 +55,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\BlockedNumber**](../Model/BlockedNumber.md)
+[**\BulkSMS\Model\BlockedNumber**](../Model/BlockedNumber.md)
 
 ### Authorization
 
@@ -88,12 +88,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\BlockedNumbersApi(
+$apiInstance = new BulkSMS\Api\BlockedNumbersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

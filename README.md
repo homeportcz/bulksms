@@ -174,18 +174,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure HTTP basic authorization: basicAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()
+$config = BulkSMS\Configuration::getDefaultConfiguration()
               ->setUsername('YOUR_USERNAME')
               ->setPassword('YOUR_PASSWORD');
 
 
-$apiInstance = new OpenAPI\Client\Api\AttachmentsApi(
+$apiInstance = new BulkSMS\Api\AttachmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \OpenAPI\Client\Model\PreSignRequest(); // \OpenAPI\Client\Model\PreSignRequest | Describes the file to upload
+$body = new \BulkSMS\Model\PreSignRequest(); // \BulkSMS\Model\PreSignRequest | Describes the file to upload
 
 try {
     $result = $apiInstance->rmmPreSignAttachmentPost($body);

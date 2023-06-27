@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace BulkSMS\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use BulkSMS\ApiException;
+use BulkSMS\Configuration;
+use BulkSMS\HeaderSelector;
+use BulkSMS\ObjectSerializer;
 
 /**
  * AttachmentsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -127,12 +127,12 @@ class AttachmentsApi
      *
      * Upload an attachment via a signed URL
      *
-     * @param  \OpenAPI\Client\Model\PreSignRequest $body Describes the file to upload (required)
+     * @param  \BulkSMS\Model\PreSignRequest $body Describes the file to upload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rmmPreSignAttachmentPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\PreSignInfo
+     * @return \BulkSMS\Model\PreSignInfo
      */
     public function rmmPreSignAttachmentPost($body, string $contentType = self::contentTypes['rmmPreSignAttachmentPost'][0])
     {
@@ -145,12 +145,12 @@ class AttachmentsApi
      *
      * Upload an attachment via a signed URL
      *
-     * @param  \OpenAPI\Client\Model\PreSignRequest $body Describes the file to upload (required)
+     * @param  \BulkSMS\Model\PreSignRequest $body Describes the file to upload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rmmPreSignAttachmentPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\PreSignInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\PreSignInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function rmmPreSignAttachmentPostWithHttpInfo($body, string $contentType = self::contentTypes['rmmPreSignAttachmentPost'][0])
     {
@@ -193,23 +193,23 @@ class AttachmentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\PreSignInfo' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\PreSignInfo' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\PreSignInfo' !== 'string') {
+                        if ('\BulkSMS\Model\PreSignInfo' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\PreSignInfo', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\PreSignInfo', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\PreSignInfo';
+            $returnType = '\BulkSMS\Model\PreSignInfo';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -230,7 +230,7 @@ class AttachmentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\PreSignInfo',
+                        '\BulkSMS\Model\PreSignInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -245,7 +245,7 @@ class AttachmentsApi
      *
      * Upload an attachment via a signed URL
      *
-     * @param  \OpenAPI\Client\Model\PreSignRequest $body Describes the file to upload (required)
+     * @param  \BulkSMS\Model\PreSignRequest $body Describes the file to upload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rmmPreSignAttachmentPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -266,7 +266,7 @@ class AttachmentsApi
      *
      * Upload an attachment via a signed URL
      *
-     * @param  \OpenAPI\Client\Model\PreSignRequest $body Describes the file to upload (required)
+     * @param  \BulkSMS\Model\PreSignRequest $body Describes the file to upload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rmmPreSignAttachmentPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -274,7 +274,7 @@ class AttachmentsApi
      */
     public function rmmPreSignAttachmentPostAsyncWithHttpInfo($body, string $contentType = self::contentTypes['rmmPreSignAttachmentPost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\PreSignInfo';
+        $returnType = '\BulkSMS\Model\PreSignInfo';
         $request = $this->rmmPreSignAttachmentPostRequest($body, $contentType);
 
         return $this->client
@@ -316,7 +316,7 @@ class AttachmentsApi
     /**
      * Create request for operation 'rmmPreSignAttachmentPost'
      *
-     * @param  \OpenAPI\Client\Model\PreSignRequest $body Describes the file to upload (required)
+     * @param  \BulkSMS\Model\PreSignRequest $body Describes the file to upload (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rmmPreSignAttachmentPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

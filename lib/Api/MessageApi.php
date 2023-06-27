@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace BulkSMS\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use BulkSMS\ApiException;
+use BulkSMS\Configuration;
+use BulkSMS\HeaderSelector;
+use BulkSMS\ObjectSerializer;
 
 /**
  * MessageApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -144,9 +144,9 @@ class MessageApi
      * @param  string $sort_order The default value is DESCENDING  If the &#x60;sortOrder&#x60; is DESCENDING, the newest messages be first in the result.  ASCENDING places the oldest messages on top of the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Message[]|\BulkSMS\Model\Error
      */
     public function messagesGet($limit = null, $filter = null, $sort_order = null, string $contentType = self::contentTypes['messagesGet'][0])
     {
@@ -164,9 +164,9 @@ class MessageApi
      * @param  string $sort_order The default value is DESCENDING  If the &#x60;sortOrder&#x60; is DESCENDING, the newest messages be first in the result.  ASCENDING places the oldest messages on top of the response. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Message[]|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function messagesGetWithHttpInfo($limit = null, $filter = null, $sort_order = null, string $contentType = self::contentTypes['messagesGet'][0])
     {
@@ -209,38 +209,38 @@ class MessageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Message[]' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Message[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Message[]' !== 'string') {
+                        if ('\BulkSMS\Model\Message[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Message[]', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Message[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Message[]';
+            $returnType = '\BulkSMS\Model\Message[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -261,7 +261,7 @@ class MessageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Message[]',
+                        '\BulkSMS\Model\Message[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -269,7 +269,7 @@ class MessageApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -317,7 +317,7 @@ class MessageApi
      */
     public function messagesGetAsyncWithHttpInfo($limit = null, $filter = null, $sort_order = null, string $contentType = self::contentTypes['messagesGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Message[]';
+        $returnType = '\BulkSMS\Model\Message[]';
         $request = $this->messagesGetRequest($limit, $filter, $sort_order, $contentType);
 
         return $this->client
@@ -477,9 +477,9 @@ class MessageApi
      * @param  string $id The &#x60;id&#x60; of the message you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesIdGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Message|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Message|\BulkSMS\Model\Error|\BulkSMS\Model\Error
      */
     public function messagesIdGet($id, string $contentType = self::contentTypes['messagesIdGet'][0])
     {
@@ -495,9 +495,9 @@ class MessageApi
      * @param  string $id The &#x60;id&#x60; of the message you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesIdGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Message|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Message|\BulkSMS\Model\Error|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function messagesIdGetWithHttpInfo($id, string $contentType = self::contentTypes['messagesIdGet'][0])
     {
@@ -540,53 +540,53 @@ class MessageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Message' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Message' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Message' !== 'string') {
+                        if ('\BulkSMS\Model\Message' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Message', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Message', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Message';
+            $returnType = '\BulkSMS\Model\Message';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -607,7 +607,7 @@ class MessageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Message',
+                        '\BulkSMS\Model\Message',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -615,7 +615,7 @@ class MessageApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -623,7 +623,7 @@ class MessageApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -667,7 +667,7 @@ class MessageApi
      */
     public function messagesIdGetAsyncWithHttpInfo($id, string $contentType = self::contentTypes['messagesIdGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Message';
+        $returnType = '\BulkSMS\Model\Message';
         $request = $this->messagesIdGetRequest($id, $contentType);
 
         return $this->client
@@ -810,9 +810,9 @@ class MessageApi
      * @param  string $id The &#x60;id&#x60; of the sent message (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesIdRelatedReceivedMessagesGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Message[]|\BulkSMS\Model\Error
      */
     public function messagesIdRelatedReceivedMessagesGet($id, string $contentType = self::contentTypes['messagesIdRelatedReceivedMessagesGet'][0])
     {
@@ -828,9 +828,9 @@ class MessageApi
      * @param  string $id The &#x60;id&#x60; of the sent message (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesIdRelatedReceivedMessagesGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Message[]|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function messagesIdRelatedReceivedMessagesGetWithHttpInfo($id, string $contentType = self::contentTypes['messagesIdRelatedReceivedMessagesGet'][0])
     {
@@ -873,38 +873,38 @@ class MessageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Message[]' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Message[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Message[]' !== 'string') {
+                        if ('\BulkSMS\Model\Message[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Message[]', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Message[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Message[]';
+            $returnType = '\BulkSMS\Model\Message[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -925,7 +925,7 @@ class MessageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Message[]',
+                        '\BulkSMS\Model\Message[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -933,7 +933,7 @@ class MessageApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -977,7 +977,7 @@ class MessageApi
      */
     public function messagesIdRelatedReceivedMessagesGetAsyncWithHttpInfo($id, string $contentType = self::contentTypes['messagesIdRelatedReceivedMessagesGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Message[]';
+        $returnType = '\BulkSMS\Model\Message[]';
         $request = $this->messagesIdRelatedReceivedMessagesGetRequest($id, $contentType);
 
         return $this->client
@@ -1117,16 +1117,16 @@ class MessageApi
      *
      * Send Messages
      *
-     * @param  \OpenAPI\Client\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
+     * @param  \BulkSMS\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
      * @param  int $deduplication_id Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the &#x60;deduplication-id&#x60; of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours. (optional)
      * @param  bool $auto_unicode Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is &#x60;true&#x60; then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when &#x60;auto-unicode&#x60; is &#x60;true&#x60; and the value of the &#x60;encoding&#x60; property is specified as &#x60;UNICODE&#x60;, the message will always be sent as &#x60;UNICODE&#x60;.  If the value is &#x60;false&#x60; and the &#x60;encoding&#x60; property is &#x60;TEXT&#x60; then non-GSM 03.38 characters will be replaced by the &#x60;?&#x60; character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to &#x60;UNICODE&#x60;.  A common mistake is to use the backtick character (\\&#x60;) which is unicode and will turn your &#x60;TEXT&#x60; message into a &#x60;UNICODE&#x60; message. (optional, default to false)
      * @param  \DateTime $schedule_date Allows you to send a message in the future.  An example value is &#x60;2019-02-18T13:00:00+02:00&#x60;.  It encodes to &#x60;2019-02-18T13%3A00%3A00%2B02%3A00&#x60;. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient&#39;s location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent. (optional)
      * @param  string $schedule_description A note that is stored together with a scheduled submission, which could be used to more easily identify the scheduled submission at a later date.  The value of this field is ignored if the &#x60;schedule-date&#x60; is not provided. A value that is longer than 256 characters is truncated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Message[]|\BulkSMS\Model\Error|\BulkSMS\Model\Error
      */
     public function messagesPost($body, $deduplication_id = null, $auto_unicode = false, $schedule_date = null, $schedule_description = null, string $contentType = self::contentTypes['messagesPost'][0])
     {
@@ -1139,16 +1139,16 @@ class MessageApi
      *
      * Send Messages
      *
-     * @param  \OpenAPI\Client\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
+     * @param  \BulkSMS\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
      * @param  int $deduplication_id Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the &#x60;deduplication-id&#x60; of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours. (optional)
      * @param  bool $auto_unicode Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is &#x60;true&#x60; then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when &#x60;auto-unicode&#x60; is &#x60;true&#x60; and the value of the &#x60;encoding&#x60; property is specified as &#x60;UNICODE&#x60;, the message will always be sent as &#x60;UNICODE&#x60;.  If the value is &#x60;false&#x60; and the &#x60;encoding&#x60; property is &#x60;TEXT&#x60; then non-GSM 03.38 characters will be replaced by the &#x60;?&#x60; character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to &#x60;UNICODE&#x60;.  A common mistake is to use the backtick character (\\&#x60;) which is unicode and will turn your &#x60;TEXT&#x60; message into a &#x60;UNICODE&#x60; message. (optional, default to false)
      * @param  \DateTime $schedule_date Allows you to send a message in the future.  An example value is &#x60;2019-02-18T13:00:00+02:00&#x60;.  It encodes to &#x60;2019-02-18T13%3A00%3A00%2B02%3A00&#x60;. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient&#39;s location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent. (optional)
      * @param  string $schedule_description A note that is stored together with a scheduled submission, which could be used to more easily identify the scheduled submission at a later date.  The value of this field is ignored if the &#x60;schedule-date&#x60; is not provided. A value that is longer than 256 characters is truncated. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Message[]|\BulkSMS\Model\Error|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function messagesPostWithHttpInfo($body, $deduplication_id = null, $auto_unicode = false, $schedule_date = null, $schedule_description = null, string $contentType = self::contentTypes['messagesPost'][0])
     {
@@ -1191,53 +1191,53 @@ class MessageApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\Message[]' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Message[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Message[]' !== 'string') {
+                        if ('\BulkSMS\Model\Message[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Message[]', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Message[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Message[]';
+            $returnType = '\BulkSMS\Model\Message[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1258,7 +1258,7 @@ class MessageApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Message[]',
+                        '\BulkSMS\Model\Message[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1266,7 +1266,7 @@ class MessageApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1274,7 +1274,7 @@ class MessageApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1289,7 +1289,7 @@ class MessageApi
      *
      * Send Messages
      *
-     * @param  \OpenAPI\Client\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
+     * @param  \BulkSMS\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
      * @param  int $deduplication_id Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the &#x60;deduplication-id&#x60; of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours. (optional)
      * @param  bool $auto_unicode Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is &#x60;true&#x60; then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when &#x60;auto-unicode&#x60; is &#x60;true&#x60; and the value of the &#x60;encoding&#x60; property is specified as &#x60;UNICODE&#x60;, the message will always be sent as &#x60;UNICODE&#x60;.  If the value is &#x60;false&#x60; and the &#x60;encoding&#x60; property is &#x60;TEXT&#x60; then non-GSM 03.38 characters will be replaced by the &#x60;?&#x60; character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to &#x60;UNICODE&#x60;.  A common mistake is to use the backtick character (\\&#x60;) which is unicode and will turn your &#x60;TEXT&#x60; message into a &#x60;UNICODE&#x60; message. (optional, default to false)
      * @param  \DateTime $schedule_date Allows you to send a message in the future.  An example value is &#x60;2019-02-18T13:00:00+02:00&#x60;.  It encodes to &#x60;2019-02-18T13%3A00%3A00%2B02%3A00&#x60;. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient&#39;s location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent. (optional)
@@ -1314,7 +1314,7 @@ class MessageApi
      *
      * Send Messages
      *
-     * @param  \OpenAPI\Client\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
+     * @param  \BulkSMS\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
      * @param  int $deduplication_id Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the &#x60;deduplication-id&#x60; of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours. (optional)
      * @param  bool $auto_unicode Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is &#x60;true&#x60; then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when &#x60;auto-unicode&#x60; is &#x60;true&#x60; and the value of the &#x60;encoding&#x60; property is specified as &#x60;UNICODE&#x60;, the message will always be sent as &#x60;UNICODE&#x60;.  If the value is &#x60;false&#x60; and the &#x60;encoding&#x60; property is &#x60;TEXT&#x60; then non-GSM 03.38 characters will be replaced by the &#x60;?&#x60; character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to &#x60;UNICODE&#x60;.  A common mistake is to use the backtick character (\\&#x60;) which is unicode and will turn your &#x60;TEXT&#x60; message into a &#x60;UNICODE&#x60; message. (optional, default to false)
      * @param  \DateTime $schedule_date Allows you to send a message in the future.  An example value is &#x60;2019-02-18T13:00:00+02:00&#x60;.  It encodes to &#x60;2019-02-18T13%3A00%3A00%2B02%3A00&#x60;. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient&#39;s location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent. (optional)
@@ -1326,7 +1326,7 @@ class MessageApi
      */
     public function messagesPostAsyncWithHttpInfo($body, $deduplication_id = null, $auto_unicode = false, $schedule_date = null, $schedule_description = null, string $contentType = self::contentTypes['messagesPost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Message[]';
+        $returnType = '\BulkSMS\Model\Message[]';
         $request = $this->messagesPostRequest($body, $deduplication_id, $auto_unicode, $schedule_date, $schedule_description, $contentType);
 
         return $this->client
@@ -1368,7 +1368,7 @@ class MessageApi
     /**
      * Create request for operation 'messagesPost'
      *
-     * @param  \OpenAPI\Client\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
+     * @param  \BulkSMS\Model\SubmissionEntry[] $body Contains details of the message (or messages) that you want to send.  One &#x60;SubmissionEntry&#x60; can produce many messages, and your request may contain multiple such entries. (required)
      * @param  int $deduplication_id Safeguards against the possibility of sending the same messages more than once.  If a communication failure occurs during a submission, you cannot be sure that the submission was processed; therefore you would have to submit it again. When you post the retry, you must use the &#x60;deduplication-id&#x60; of the original post. The BulkSMS system uses this ID to check that the request was not previously processed. (If it was previously processed, the submission will succeed, and the behaviour will be indistinguishable to you from a non-duplicated submission). The ID expires after about 12 hours. (optional)
      * @param  bool $auto_unicode Specifies how to deal with message text that contains characters not present in the GSM 03.38 character set.  Messages that contain only GSM 03.38 characters are not affected by this setting.  If the value is &#x60;true&#x60; then a message containing non-GSM 03.38 characters will be transmitted as a Unicode SMS (which is most likely more costly).   Please note: when &#x60;auto-unicode&#x60; is &#x60;true&#x60; and the value of the &#x60;encoding&#x60; property is specified as &#x60;UNICODE&#x60;, the message will always be sent as &#x60;UNICODE&#x60;.  If the value is &#x60;false&#x60; and the &#x60;encoding&#x60; property is &#x60;TEXT&#x60; then non-GSM 03.38 characters will be replaced by the &#x60;?&#x60; character.  When using this setting on the API, you should take case to ensure that your message is _clean_.    Invisible unicode and unexpected characters could unintentionally convert an message to &#x60;UNICODE&#x60;.  A common mistake is to use the backtick character (\\&#x60;) which is unicode and will turn your &#x60;TEXT&#x60; message into a &#x60;UNICODE&#x60; message. (optional, default to false)
      * @param  \DateTime $schedule_date Allows you to send a message in the future.  An example value is &#x60;2019-02-18T13:00:00+02:00&#x60;.  It encodes to &#x60;2019-02-18T13%3A00%3A00%2B02%3A00&#x60;. Credits are deducted from your account immediately. Once submitted, scheduled messages cannot be changed or cancelled. The date can be a maximum of two years in the future. If the value is in the past, the message will be sent immediately. The date format requires you to supply an offset from UTC. You can decide to use the offset of your timezone, or maybe the zone of the recipient&#39;s location is more appropriate. If the destination is a group, the group members are determined at the time that you submit the message; not the time the message is scheduled to be sent. (optional)
@@ -1514,9 +1514,9 @@ class MessageApi
      * @param  int $deduplication_id Refer to the &#x60;deduplication-id&#x60; parameter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesSendGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Message[]|\BulkSMS\Model\Error|\BulkSMS\Model\Error
      */
     public function messagesSendGet($to, $body, $deduplication_id = null, string $contentType = self::contentTypes['messagesSendGet'][0])
     {
@@ -1534,9 +1534,9 @@ class MessageApi
      * @param  int $deduplication_id Refer to the &#x60;deduplication-id&#x60; parameter. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['messagesSendGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Message[]|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Message[]|\BulkSMS\Model\Error|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function messagesSendGetWithHttpInfo($to, $body, $deduplication_id = null, string $contentType = self::contentTypes['messagesSendGet'][0])
     {
@@ -1579,53 +1579,53 @@ class MessageApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\OpenAPI\Client\Model\Message[]' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Message[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Message[]' !== 'string') {
+                        if ('\BulkSMS\Model\Message[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Message[]', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Message[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Message[]';
+            $returnType = '\BulkSMS\Model\Message[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1646,7 +1646,7 @@ class MessageApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Message[]',
+                        '\BulkSMS\Model\Message[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1654,7 +1654,7 @@ class MessageApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1662,7 +1662,7 @@ class MessageApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1710,7 +1710,7 @@ class MessageApi
      */
     public function messagesSendGetAsyncWithHttpInfo($to, $body, $deduplication_id = null, string $contentType = self::contentTypes['messagesSendGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Message[]';
+        $returnType = '\BulkSMS\Model\Message[]';
         $request = $this->messagesSendGetRequest($to, $body, $deduplication_id, $contentType);
 
         return $this->client

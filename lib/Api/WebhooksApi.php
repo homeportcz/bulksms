@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace BulkSMS\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use BulkSMS\ApiException;
+use BulkSMS\Configuration;
+use BulkSMS\HeaderSelector;
+use BulkSMS\ObjectSerializer;
 
 /**
  * WebhooksApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -141,9 +141,9 @@ class WebhooksApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Webhook[]
+     * @return \BulkSMS\Model\Webhook[]
      */
     public function webhooksGet(string $contentType = self::contentTypes['webhooksGet'][0])
     {
@@ -158,9 +158,9 @@ class WebhooksApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Webhook[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Webhook[], HTTP status code, HTTP response headers (array of strings)
      */
     public function webhooksGetWithHttpInfo(string $contentType = self::contentTypes['webhooksGet'][0])
     {
@@ -203,23 +203,23 @@ class WebhooksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Webhook[]' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Webhook[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Webhook[]' !== 'string') {
+                        if ('\BulkSMS\Model\Webhook[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Webhook[]', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Webhook[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Webhook[]';
+            $returnType = '\BulkSMS\Model\Webhook[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -240,7 +240,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Webhook[]',
+                        '\BulkSMS\Model\Webhook[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,7 +282,7 @@ class WebhooksApi
      */
     public function webhooksGetAsyncWithHttpInfo(string $contentType = self::contentTypes['webhooksGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Webhook[]';
+        $returnType = '\BulkSMS\Model\Webhook[]';
         $request = $this->webhooksGetRequest($contentType);
 
         return $this->client
@@ -409,7 +409,7 @@ class WebhooksApi
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdDelete'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -426,7 +426,7 @@ class WebhooksApi
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdDelete'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -476,7 +476,7 @@ class WebhooksApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -650,9 +650,9 @@ class WebhooksApi
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Webhook|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Webhook|\BulkSMS\Model\Error|\BulkSMS\Model\Error
      */
     public function webhooksIdGet($id, string $contentType = self::contentTypes['webhooksIdGet'][0])
     {
@@ -668,9 +668,9 @@ class WebhooksApi
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Webhook|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Webhook|\BulkSMS\Model\Error|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function webhooksIdGetWithHttpInfo($id, string $contentType = self::contentTypes['webhooksIdGet'][0])
     {
@@ -713,53 +713,53 @@ class WebhooksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Webhook' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Webhook' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Webhook' !== 'string') {
+                        if ('\BulkSMS\Model\Webhook' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Webhook', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Webhook', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Webhook';
+            $returnType = '\BulkSMS\Model\Webhook';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -780,7 +780,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Webhook',
+                        '\BulkSMS\Model\Webhook',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -788,7 +788,7 @@ class WebhooksApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -796,7 +796,7 @@ class WebhooksApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -840,7 +840,7 @@ class WebhooksApi
      */
     public function webhooksIdGetAsyncWithHttpInfo($id, string $contentType = self::contentTypes['webhooksIdGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Webhook';
+        $returnType = '\BulkSMS\Model\Webhook';
         $request = $this->webhooksIdGetRequest($id, $contentType);
 
         return $this->client
@@ -981,12 +981,12 @@ class WebhooksApi
      * Update a webhook
      *
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the new property values for the webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the new property values for the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Webhook|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Webhook|\BulkSMS\Model\Error
      */
     public function webhooksIdPost($id, $body, string $contentType = self::contentTypes['webhooksIdPost'][0])
     {
@@ -1000,12 +1000,12 @@ class WebhooksApi
      * Update a webhook
      *
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the new property values for the webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the new property values for the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Webhook|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Webhook|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function webhooksIdPostWithHttpInfo($id, $body, string $contentType = self::contentTypes['webhooksIdPost'][0])
     {
@@ -1048,38 +1048,38 @@ class WebhooksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Webhook' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Webhook' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Webhook' !== 'string') {
+                        if ('\BulkSMS\Model\Webhook' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Webhook', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Webhook', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Webhook';
+            $returnType = '\BulkSMS\Model\Webhook';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1100,7 +1100,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Webhook',
+                        '\BulkSMS\Model\Webhook',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1108,7 +1108,7 @@ class WebhooksApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1124,7 +1124,7 @@ class WebhooksApi
      * Update a webhook
      *
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the new property values for the webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the new property values for the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1146,7 +1146,7 @@ class WebhooksApi
      * Update a webhook
      *
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the new property values for the webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the new property values for the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1154,7 +1154,7 @@ class WebhooksApi
      */
     public function webhooksIdPostAsyncWithHttpInfo($id, $body, string $contentType = self::contentTypes['webhooksIdPost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Webhook';
+        $returnType = '\BulkSMS\Model\Webhook';
         $request = $this->webhooksIdPostRequest($id, $body, $contentType);
 
         return $this->client
@@ -1197,7 +1197,7 @@ class WebhooksApi
      * Create request for operation 'webhooksIdPost'
      *
      * @param  string $id The &#x60;id&#x60; of the webhook (required)
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the new property values for the webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the new property values for the webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksIdPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1309,12 +1309,12 @@ class WebhooksApi
      *
      * Create a webhook
      *
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the property values for your new webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the property values for your new webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Webhook|\OpenAPI\Client\Model\Error
+     * @return \BulkSMS\Model\Webhook|\BulkSMS\Model\Error
      */
     public function webhooksPost($body, string $contentType = self::contentTypes['webhooksPost'][0])
     {
@@ -1327,12 +1327,12 @@ class WebhooksApi
      *
      * Create a webhook
      *
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the property values for your new webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the property values for your new webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Webhook|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\Webhook|\BulkSMS\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function webhooksPostWithHttpInfo($body, string $contentType = self::contentTypes['webhooksPost'][0])
     {
@@ -1375,38 +1375,38 @@ class WebhooksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Webhook' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Webhook' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Webhook' !== 'string') {
+                        if ('\BulkSMS\Model\Webhook' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Webhook', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Webhook', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\BulkSMS\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Webhook';
+            $returnType = '\BulkSMS\Model\Webhook';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1427,7 +1427,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Webhook',
+                        '\BulkSMS\Model\Webhook',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1435,7 +1435,7 @@ class WebhooksApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\BulkSMS\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1450,7 +1450,7 @@ class WebhooksApi
      *
      * Create a webhook
      *
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the property values for your new webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the property values for your new webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1471,7 +1471,7 @@ class WebhooksApi
      *
      * Create a webhook
      *
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the property values for your new webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the property values for your new webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1479,7 +1479,7 @@ class WebhooksApi
      */
     public function webhooksPostAsyncWithHttpInfo($body, string $contentType = self::contentTypes['webhooksPost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Webhook';
+        $returnType = '\BulkSMS\Model\Webhook';
         $request = $this->webhooksPostRequest($body, $contentType);
 
         return $this->client
@@ -1521,7 +1521,7 @@ class WebhooksApi
     /**
      * Create request for operation 'webhooksPost'
      *
-     * @param  \OpenAPI\Client\Model\WebhookEntry $body Contains the property values for your new webhook (required)
+     * @param  \BulkSMS\Model\WebhookEntry $body Contains the property values for your new webhook (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhooksPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

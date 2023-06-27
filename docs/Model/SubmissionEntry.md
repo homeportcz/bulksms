@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**from** | [**\OpenAPI\Client\Model\SubmissionEntryFrom**](SubmissionEntryFrom.md) |  | [optional]
-**to** | [**\OpenAPI\Client\Model\SubmissionEntryToInner[]**](SubmissionEntryToInner.md) | Identifies the recipients  Instead of an array of structured objects, you can also provide a single object, a simple string or an array of strings. If you supply a string, the &#x60;type&#x60; is taken as INTERNATIONAL. |
+**from** | [**\BulkSMS\Model\SubmissionEntryFrom**](SubmissionEntryFrom.md) |  | [optional]
+**to** | [**\BulkSMS\Model\SubmissionEntryToInner[]**](SubmissionEntryToInner.md) | Identifies the recipients  Instead of an array of structured objects, you can also provide a single object, a simple string or an array of strings. If you supply a string, the &#x60;type&#x60; is taken as INTERNATIONAL. |
 **routing_group** | **string** | Allows you to choose routing. The default is STANDARD. | [optional]
 **encoding** | **string** | Describes the content of the message body.  Typically this is TEXT, which is the default if no value is provided.  If you need to send characters that are not covered by the [GSM 03.38](https://en.wikipedia.org/wiki/GSM_03.38) character set you will need to specify UNICODE.  If you want to send a sequence of bytes, you must use BINARY.  You can also or use the &#x60;auto-unicode&#x60; parameter of the Send Messages Operation.     If you supply the value of &#x60;TEXT&#x60; while &#x60;auto-unicode&#x60; is &#x60;true&#x60; then your message may be converted to &#x60;UNICODE&#x60;.  If you supply a value other than &#x60;TEXT&#x60; for this property while &#x60;auto-unicode&#x60; is &#x60;true&#x60; then no automatic conversion will take place. | [optional]
 **long_message_max_parts** | **int** | The maximum number of message parts that can be used for a [concatenated message](https://en.wikipedia.org/wiki/Concatenated_SMS). The default is &#x60;3&#x60;. | [optional]

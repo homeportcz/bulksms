@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace BulkSMS\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use BulkSMS\ApiException;
+use BulkSMS\Configuration;
+use BulkSMS\HeaderSelector;
+use BulkSMS\ObjectSerializer;
 
 /**
  * BlockedNumbersApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -134,9 +134,9 @@ class BlockedNumbersApi
      * @param  mixed $limit The maximum number of records to return. The default value is &#x60;10000&#x60;. The value cannot be greater than 10000. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blockedNumbersGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\BlockedNumber
+     * @return \BulkSMS\Model\BlockedNumber
      */
     public function blockedNumbersGet($min_id = null, $limit = null, string $contentType = self::contentTypes['blockedNumbersGet'][0])
     {
@@ -153,9 +153,9 @@ class BlockedNumbersApi
      * @param  mixed $limit The maximum number of records to return. The default value is &#x60;10000&#x60;. The value cannot be greater than 10000. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blockedNumbersGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\BlockedNumber, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \BulkSMS\Model\BlockedNumber, HTTP status code, HTTP response headers (array of strings)
      */
     public function blockedNumbersGetWithHttpInfo($min_id = null, $limit = null, string $contentType = self::contentTypes['blockedNumbersGet'][0])
     {
@@ -198,23 +198,23 @@ class BlockedNumbersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\BlockedNumber' === '\SplFileObject') {
+                    if ('\BulkSMS\Model\BlockedNumber' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\BlockedNumber' !== 'string') {
+                        if ('\BulkSMS\Model\BlockedNumber' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\BlockedNumber', []),
+                        ObjectSerializer::deserialize($content, '\BulkSMS\Model\BlockedNumber', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\BlockedNumber';
+            $returnType = '\BulkSMS\Model\BlockedNumber';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -235,7 +235,7 @@ class BlockedNumbersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\BlockedNumber',
+                        '\BulkSMS\Model\BlockedNumber',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -281,7 +281,7 @@ class BlockedNumbersApi
      */
     public function blockedNumbersGetAsyncWithHttpInfo($min_id = null, $limit = null, string $contentType = self::contentTypes['blockedNumbersGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\BlockedNumber';
+        $returnType = '\BulkSMS\Model\BlockedNumber';
         $request = $this->blockedNumbersGetRequest($min_id, $limit, $contentType);
 
         return $this->client
@@ -430,7 +430,7 @@ class BlockedNumbersApi
      * @param  string[] $body Maximum size: &#x60;1000&#x60; items (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blockedNumbersPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -447,7 +447,7 @@ class BlockedNumbersApi
      * @param  string[] $body Maximum size: &#x60;1000&#x60; items (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blockedNumbersPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \BulkSMS\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

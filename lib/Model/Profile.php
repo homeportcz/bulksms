@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace BulkSMS\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \BulkSMS\ObjectSerializer;
 
 /**
  * Profile Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  BulkSMS
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,11 +60,11 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'username' => 'string',
         'created' => '\DateTime',
-        'credits' => '\OpenAPI\Client\Model\ProfileCredits',
-        'quota' => '\OpenAPI\Client\Model\ProfileQuota',
-        'origin_addresses' => '\OpenAPI\Client\Model\ProfileOriginAddresses',
-        'company' => '\OpenAPI\Client\Model\ProfileCompany',
-        'commerce' => '\OpenAPI\Client\Model\ProfileCommerce'
+        'credits' => '\BulkSMS\Model\ProfileCredits',
+        'quota' => '\BulkSMS\Model\ProfileQuota',
+        'origin_addresses' => '\BulkSMS\Model\ProfileOriginAddresses',
+        'company' => '\BulkSMS\Model\ProfileCompany',
+        'commerce' => '\BulkSMS\Model\ProfileCommerce'
     ];
 
     /**
@@ -437,7 +437,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets credits
      *
-     * @return \OpenAPI\Client\Model\ProfileCredits
+     * @return \BulkSMS\Model\ProfileCredits
      */
     public function getCredits()
     {
@@ -447,7 +447,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets credits
      *
-     * @param \OpenAPI\Client\Model\ProfileCredits $credits credits
+     * @param \BulkSMS\Model\ProfileCredits $credits credits
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets quota
      *
-     * @return \OpenAPI\Client\Model\ProfileQuota
+     * @return \BulkSMS\Model\ProfileQuota
      */
     public function getQuota()
     {
@@ -474,7 +474,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quota
      *
-     * @param \OpenAPI\Client\Model\ProfileQuota $quota quota
+     * @param \BulkSMS\Model\ProfileQuota $quota quota
      *
      * @return self
      */
@@ -491,7 +491,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets origin_addresses
      *
-     * @return \OpenAPI\Client\Model\ProfileOriginAddresses|null
+     * @return \BulkSMS\Model\ProfileOriginAddresses|null
      */
     public function getOriginAddresses()
     {
@@ -501,7 +501,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets origin_addresses
      *
-     * @param \OpenAPI\Client\Model\ProfileOriginAddresses|null $origin_addresses origin_addresses
+     * @param \BulkSMS\Model\ProfileOriginAddresses|null $origin_addresses origin_addresses
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets company
      *
-     * @return \OpenAPI\Client\Model\ProfileCompany|null
+     * @return \BulkSMS\Model\ProfileCompany|null
      */
     public function getCompany()
     {
@@ -528,7 +528,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets company
      *
-     * @param \OpenAPI\Client\Model\ProfileCompany|null $company company
+     * @param \BulkSMS\Model\ProfileCompany|null $company company
      *
      * @return self
      */
@@ -545,7 +545,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets commerce
      *
-     * @return \OpenAPI\Client\Model\ProfileCommerce|null
+     * @return \BulkSMS\Model\ProfileCommerce|null
      */
     public function getCommerce()
     {
@@ -555,7 +555,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets commerce
      *
-     * @param \OpenAPI\Client\Model\ProfileCommerce|null $commerce commerce
+     * @param \BulkSMS\Model\ProfileCommerce|null $commerce commerce
      *
      * @return self
      */
